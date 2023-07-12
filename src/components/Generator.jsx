@@ -1,5 +1,7 @@
 import { useCallback, useMemo, useRef, useState } from "react";
 import Input from "./Input";
+import '../css/Generator.css';
+import LottoNumber from "./Number";
 
 const Generator = () => {
     const [lotto, setLotto] = useState(null);
@@ -66,19 +68,20 @@ const Generator = () => {
 
     return (
         <div className="generator">
-            {
-                JSON.stringify(lotto)
-            }
-            <hr />
-            {
-                JSON.stringify(specialNumbers)
-            }
-            <div>
+            <div className="lotto-numbers">
+                {
+                    lotto &&
+                    lotto.map(num => {
+                        return <LottoNumber num={num} key={num} />
+                    })
+                }
+            </div>
+            <div className="special-numbers container">
                 {
                     (specialNumbers.length >= 1) &&
                     specialNumbers.map((field, id) => {
                         return (
-                            <div key={id}>
+                            <div className="special-number" key={id}>
                                 <Input
                                     innerRef={inputEl} 
                                     key={id}
@@ -87,18 +90,20 @@ const Generator = () => {
                                     onChange={(e) => (handleChange(id, e))}
                                 />
 
-                                <button onClick={() => handleRemove(id)}>Remove</button>
+                                <button className="remove-field" onClick={() => handleRemove(id)}>Remove</button>
                             </div>
                         )
 
                     })
                 }
-                <hr />
-                <button onClick={addFields}>Add field</button>
+                <button className="add-field" onClick={addFields}>Add field</button>
             </div>
-            <button onClick={handleClick}>
-                Generate
-            </button>
+
+            <div className="generate-container">
+                <button className="generate-btn" onClick={handleClick}>
+                    Generate
+                </button>
+            </div>
         </div>
     )
 }

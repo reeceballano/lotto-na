@@ -1,0 +1,36 @@
+.section {
+    @apply md:py-24
+}
+
+
+.app {
+    @apply min-h-screen
+}
+
+/**
+    HEADER
+*/
+
+.main-header {
+    @apply py-8
+}
+
+.nav-container {
+    @apply md:flex
+}
+
+.logo-container {
+    @apply md:w-44 flex items-center gap-2
+}
+
+.logo-container img {
+    @apply w-12
+}
+
+.logo-container h3 {
+    @apply text-xl font-semibold uppercase tracking-wider text-gray-900 font-header
+}
+
+.logo-container h3 span {
+    @apply text-slate-700
+}

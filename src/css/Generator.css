@@ -1,0 +1,48 @@
+/**
+    LOTTO NUMBERS
+*/
+
+.lotto-numbers {
+    @apply flex gap-5 justify-center items-center
+}
+
+.lotto-number {
+    @apply md:text-7xl font-header border border-slate-300 p-5 w-32 flex items-center justify-center text-slate-600
+}
+
+/**
+    SPECIAL NUMBERS
+*/
+
+.special-numbers {
+    @apply grid grid-cols-6 gap-5 bg-slate-50 my-8 py-10 rounded-lg shadow-lg shadow-slate-200 items-center
+}
+
+.special-number {
+    @apply p-3
+}
+
+.lotto-input {
+    @apply w-full bg-slate-300 px-4 py-1 rounded-xl text-lg font-header
+}
+
+/**
+    BUTTONS
+*/
+
+.remove-field {
+    @apply font-header text-sm tracking-widest text-red-600
+}
+
+.add-field {
+    @apply bg-green-600 hover:bg-green-700 transition-colors delay-75 text-white rounded-lg h-9 -mt-5 font-medium font-header tracking-widest
+}
+
+.generate-container {
+    @apply flex items-center justify-center
+}
+
+.generate-btn {
+    @apply bg-green-600 hover:bg-green-700 transition-colors delay-75 text-white tracking-widest rounded-lg px-10 py-3 text-2xl font-header font-semibold 
+}
+
