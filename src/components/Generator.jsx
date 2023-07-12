@@ -1,9 +1,10 @@
-import { useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useRef, useState } from "react";
 import Input from "./Input";
 
 const Generator = () => {
     const [lotto, setLotto] = useState(null);
     const [specialNumbers, setSpecialNumbers] = useState([]);
+    const inputEl = useRef('');
 
     const random = useCallback((num) => {
         const lottoArr = [];
@@ -46,6 +47,9 @@ const Generator = () => {
     const addFields = () => {
         if(specialNumbers.length >= 6) { return }
         setSpecialNumbers((prev) => [...prev, '']);
+        setTimeout(() => {
+            inputEl.current.focus();
+        },100)
     }
 
     const handleChange = (id, event) => {
@@ -71,10 +75,12 @@ const Generator = () => {
             }
             <div>
                 {
+                    (specialNumbers.length >= 1) &&
                     specialNumbers.map((field, id) => {
                         return (
                             <div key={id}>
-                                <Input 
+                                <Input
+                                    innerRef={inputEl} 
                                     key={id}
                                     id={id}
                                     field={field}
