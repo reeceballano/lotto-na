@@ -1,10 +1,10 @@
 .section {
-    @apply md:py-24
+    @apply md:py-24 w-full relative
 }
 
 
 .app {
-    @apply min-h-screen
+    @apply min-h-screen w-full
 }
 
 /**

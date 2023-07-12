@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import Input from "./Input";
 import '../css/Generator.css';
 import LottoNumber from "./Number";
@@ -65,6 +65,10 @@ const Generator = () => {
         values.splice(id, 1);
         setSpecialNumbers(values);
     }
+
+    useEffect(() => {
+        random(6);
+    },[])
 
     return (
         <div className="generator">
