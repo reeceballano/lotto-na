@@ -7,7 +7,6 @@ const Generator = () => {
     const [lotto, setLotto] = useState(null);
     const [specialNumbers, setSpecialNumbers] = useState([]);
     const inputEl = useRef('');
-    const addEl = useRef('');
 
     const random = useCallback((num) => {
         const lottoArr = [];
@@ -52,7 +51,6 @@ const Generator = () => {
         setSpecialNumbers((prev) => [...prev, '']);
         setTimeout(() => {
             inputEl.current.focus();
-            addEl.current.disabled = true; // disable Add field button if current field is empty
         },100)
     }
 
@@ -60,7 +58,6 @@ const Generator = () => {
         const values = [...specialNumbers];
         values[id] = event.target.value;
         setSpecialNumbers(values);
-        addEl.current.disabled = false; // enable Add field button if current field is not empty
     }
 
     const handleRemove = (id) => {
@@ -103,7 +100,7 @@ const Generator = () => {
 
                     })
                 }
-                <button ref={addEl} className="add-field" onClick={addFields}>Add field</button>
+                <button className="add-field" onClick={addFields}>Add field</button>
             </div>
 
             <div className="generate-container">
