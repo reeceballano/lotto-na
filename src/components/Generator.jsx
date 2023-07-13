@@ -80,7 +80,7 @@ const Generator = () => {
                     })
                 }
             </div>
-            <div className="special-numbers container">
+            <div className="special-numbers">
                 {
                     (specialNumbers.length >= 1) &&
                     specialNumbers.map((field, id) => {
@@ -100,7 +100,11 @@ const Generator = () => {
 
                     })
                 }
-                <button className="add-field" onClick={addFields}>Add field</button>
+
+                {
+                    (specialNumbers.length <= 5 ) &&
+                    <button className="add-field" onClick={addFields}>Add SP Number</button>
+                }
             </div>
 
             <div className="generate-container">
