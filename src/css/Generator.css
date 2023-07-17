@@ -7,7 +7,7 @@
 }
 
 .lotto-number {
-    @apply md:text-7xl text-xl font-header border border-slate-300 p-5 w-32 flex items-center justify-center text-slate-600
+    @apply md:text-7xl text-xl font-header border border-slate-300 p-2 w-20 flex items-center justify-center text-slate-600
 }
 
 /**
