@@ -66,7 +66,6 @@ const Generator = () => {
             values[id] = event.target.value;
             setSpecialNumbers(values);
         }
-
     }
 
     const handleRemove = (id) => {
@@ -89,30 +88,24 @@ const Generator = () => {
                     })
                 }
             </div>
-            <div className="special-numbers">
+
+            <div className={`${specialNumbers.length >= 1 ? '' : 'hidden'} special-numbers`}>
                 {
-                    (specialNumbers.length >= 1) &&
                     specialNumbers.map((field, id) => {
                         return (
-                            <div className="special-number" key={id}>
-                                <Input
-                                    innerRef={inputEl} 
-                                    key={id}
-                                    id={id}
-                                    field={field}
-                                    onChange={(e) => (handleChange(id, e))}
-                                />
+                                    <div className="special-number" key={id}>
+                                        <Input
+                                            innerRef={inputEl} 
+                                            key={id}
+                                            id={id}
+                                            field={field}
+                                            onChange={(e) => (handleChange(id, e))}
+                                    />
 
-                                <button className="remove-field" onClick={() => handleRemove(id)}>Remove</button>
-                            </div>
+                                    <button className="remove-field" onClick={() => handleRemove(id)}>Remove</button>
+                                </div>
                         )
-
                     })
-                }
-
-                {
-                    (specialNumbers.length <= 5 ) &&
-                    <button className="add-field" onClick={addFields}>Add SP Number</button>
                 }
             </div>
 
@@ -120,6 +113,10 @@ const Generator = () => {
                 <button className="generate-btn" onClick={handleClick}>
                     Generate
                 </button>
+                {
+                    (specialNumbers.length <= 5 ) &&
+                    <button className="add-field" onClick={addFields}>Add field</button>
+                }
             </div>
         </div>
     )
