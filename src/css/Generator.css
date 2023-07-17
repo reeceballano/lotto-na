@@ -1,3 +1,7 @@
+.generator {
+    @apply flex items-center justify-center flex-col
+}
+
 /**
     LOTTO NUMBERS
 */
@@ -7,7 +11,9 @@
 }
 
 .lotto-number {
-    @apply md:text-7xl text-xl font-header border border-slate-300 p-2 w-20 flex items-center justify-center text-slate-600
+    @apply md:text-7xl text-xl font-header border bg-stone-200 
+        border-stone-300 p-2 md:w-20 w-10 flex items-center justify-center 
+        text-stone-600 rounded
 }
 
 /**
@@ -16,16 +22,12 @@
 
 .special-numbers {
     @apply flex justify-center md:flex-row flex-col md:gap-5 gap-2 
-        bg-slate-100 my-8 py-10 px-3 rounded-lg shadow-lg border border-slate-200
+        bg-stone-100 my-8 py-10 px-3 rounded-lg shadow-lg border border-stone-200
         shadow-slate-200
 }
 
-.special-number {
-    @apply py-3 md:basis-1/6 basis-full
-}
-
 .lotto-input {
-    @apply w-full bg-slate-300 px-2 py-1 rounded-xl text-lg font-header
+    @apply w-full bg-stone-300 px-2 py-1 rounded text-lg font-header
 }
 
 /**
@@ -37,12 +39,12 @@
 }
 
 .generate-container {
-    @apply flex items-center justify-center gap-5 mt-10
+    @apply flex items-center md:flex-row flex-col justify-center gap-5 mt-10
 }
 
 .add-field,
 .generate-btn {
-    @apply  transition-colors delay-75 text-white tracking-widest rounded-lg px-10 py-3 text-2xl font-header font-semibold 
+    @apply  w-full md:w-52 transition-colors delay-75 text-white tracking-widest rounded px-10 py-3 text-xl font-header font-normal 
 }
 
 .generate-btn {

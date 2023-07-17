@@ -40,7 +40,7 @@
 */
 
 .generator-section .container {
-    @apply md:flex md:gap-5 gap-2
+    @apply flex md:flex-row flex-col md:gap-5 gap-2
 }
 
 .sidebar, .generator {
@@ -48,9 +48,9 @@
 }
 
 .sidebar {
-    @apply w-full md:w-1/3
+    @apply w-full md:w-1/3 bg-stone-200 order-last md:order-first h-min
 }
 
 .generator {
-    @apply w-full
+    @apply w-full md:order-last order-first
 }
