@@ -56,6 +56,10 @@ const Generator = () => {
     }
 
     const handleChange = (id, event) => {
+        const re = /^[0-9\b]+$/;
+
+        if(!re.test(event.target.value)) { return }
+
         const values = [...specialNumbers];
         values[id] = event.target.value;
         setSpecialNumbers(values);
