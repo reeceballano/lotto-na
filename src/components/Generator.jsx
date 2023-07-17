@@ -15,7 +15,7 @@ const Generator = () => {
             lottoArr.push(r);
         } 
         // INSERT SPECIAL NUMBERS IF EXIST
-        const newSP = specialNumbers.map(item => Number(item));
+        const newSP = specialNumbers.map(item => Number(item)).filter(item => item !== 0);
         const lottoData = [...lottoArr, ...newSP]
         setLotto(lottoData)
 
@@ -25,7 +25,8 @@ const Generator = () => {
     },[lotto, specialNumbers]);
 
     const handleClick = () => {
-        const num = 6 - parseInt(specialNumbers.length);
+        const num = 6 - parseInt(specialNumbers.map(item => Number(item)).filter(item => item !== 0).length);
+
         if(specialNumbers.length) {
             random(num);
         } else {
