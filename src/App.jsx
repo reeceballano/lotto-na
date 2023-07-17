@@ -1,27 +1,14 @@
 import Generator from "./components/Generator";
 import '../src/css/General.css';
 import Logo from '../src/assets/lotto.png';
+import Header from "./components/Header";
 
 const App = () => {
 
 
     return (
         <div className="app">
-            <section className="main-header">
-                <div className="container">
-                    <div className="nav-container">
-                        <a href="#">
-                            <div className="logo-container">
-                                {/* <img src={Logo} alt="Logo" /> */}
-                                <div>
-                                    <h3>Lotto<span>Na</span></h3>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-
-            </section>
+            <Header />
             
             <section className="generator-section section">
                 <div className="container">
