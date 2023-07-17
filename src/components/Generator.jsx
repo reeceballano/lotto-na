@@ -6,12 +6,14 @@ import LottoNumber from "./Number";
 const Generator = () => {
     const [lotto, setLotto] = useState(null);
     const [specialNumbers, setSpecialNumbers] = useState([]);
+    const [lottoOption, setLottoOption] = useState(45);
+
     const inputEl = useRef('');
 
     const random = useCallback((num) => {
         const lottoArr = [];
         for(let i = 0; i < num; i++) {
-            const r = Math.floor(Math.random() * (48 - 1) + 1);
+            const r = Math.floor(Math.random() * (lottoOption - 1) + 1);
             lottoArr.push(r);
         } 
         // INSERT SPECIAL NUMBERS IF EXIST
@@ -58,11 +60,13 @@ const Generator = () => {
     const handleChange = (id, event) => {
         const re = /^[0-9\b]+$/;
 
-        if(!re.test(event.target.value)) { return }
+        // only number is allowed
+        if(event.target.value === '' || re.test(event.target.value) ) { 
+            const values = [...specialNumbers];
+            values[id] = event.target.value;
+            setSpecialNumbers(values);
+        }
 
-        const values = [...specialNumbers];
-        values[id] = event.target.value;
-        setSpecialNumbers(values);
     }
 
     const handleRemove = (id) => {
