@@ -1,11 +1,8 @@
 import { useRef } from "react";
-import { motion } from "framer-motion";
-import Input from "./Input";
 import '../css/Generator.css';
-import LottoNumber from "./LottoNumber";
 import useLotto from "../hooks/useLotto";
 import Button from "./Button";
-import { HiOutlineRefresh, HiOutlinePlus } from "react-icons/hi";
+import { HiOutlineRefresh, HiOutlinePlus, HiOutlineSave } from "react-icons/hi";
 import LottoNumbers from "./LottoNumbers";
 import SpecialNumbers from "./SpecialNumbers";
 
@@ -43,9 +40,17 @@ const Generator = () => {
         setSpecialNumbers(values);
     }
 
+    const handleSave = () => {
+    
+    }
+
     return (
         <div className="generator">
-            <LottoNumbers lotto={lotto} />
+            <LottoNumbers lotto={lotto}>
+                <Button onClick={handleSave} className="save-btn secondary-btn">
+                    <HiOutlineSave /> Save 
+                </Button>
+            </LottoNumbers>
 
             {
                 (specialNumbers.length > 0) &&

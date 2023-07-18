@@ -1,6 +1,6 @@
 import LottoNumber from "./LottoNumber";
 
-const LottoNumbers = ({ lotto }) => {
+const LottoNumbers = ({ lotto, children }) => {
     return (
         <div className="lotto-numbers">
             {
@@ -9,6 +9,8 @@ const LottoNumbers = ({ lotto }) => {
                     return <LottoNumber num={num} key={num} />
                 })
             }
+
+            { children }
         </div>
     )
 }

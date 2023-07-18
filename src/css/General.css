@@ -15,7 +15,14 @@
     @apply bg-rose-600 hover:bg-rose-700 active:bg-rose-900
 }
 
+.save-btn {
+    @apply px-2 py-2 text-white uppercase rounded text-base 
+        tracking-wider flex items-center justify-center font-header
+}
 
+.save-btn svg {
+    @apply mr-1
+}
 
 /**
     HEADER
