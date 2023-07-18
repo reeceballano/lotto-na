@@ -24,7 +24,7 @@ const Generator = () => {
 
     const handleChange = (id, event) => {
         const re = /^[0-9\b]+$/;
-
+        
         // only number is allowed
         if(event.target.value === '' || re.test(event.target.value) ) { 
             const values = [...specialNumbers];
