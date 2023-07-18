@@ -5,7 +5,7 @@ const Sidebar = ({ children }) => {
     const { initial, animate, exit } = slideUpDown();
 
     return (
-        <motion.div 
+        <motion.div
             initial={initial}
             animate={animate}
             exit={exit}

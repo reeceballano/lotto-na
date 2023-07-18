@@ -9,3 +9,7 @@
 .sidebar-widget .history-list li small {
     @apply text-xs bg-rose-600 p-1 overflow-hidden text-white rounded-sm font-thin tracking-widest
 }
+
+.sidebar-widget .history-list li span {
+    @apply w-6 h-6 flex items-center justify-center px-0 py-1 text-stone-500 border border-stone-400 rounded
+}

@@ -1,0 +1,7 @@
+.main-footer .footer-contents {
+    @apply border-y border-stone-200 py-5 md:text-left text-center
+}
+
+.footer-contents small {
+    @apply text-xs text-stone-500 text-center
+}

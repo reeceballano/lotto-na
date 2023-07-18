@@ -1,13 +1,16 @@
-import { useRef } from "react";
+import { useContext, useRef } from "react";
 import '../css/Generator.css';
 import useLotto from "../hooks/useLotto";
 import Button from "./Button";
 import { HiOutlineRefresh, HiOutlinePlus, HiOutlineSave } from "react-icons/hi";
 import LottoNumbers from "./LottoNumbers";
 import SpecialNumbers from "./SpecialNumbers";
+import { LocalStorageContext } from "../context/LocalStorageProvider";
 
 const Generator = () => {
     const { lotto, specialNumbers, random, setSpecialNumbers } = useLotto();
+    
+    const { addLotto } = useContext(LocalStorageContext);
 
     const inputEl = useRef('');
 
@@ -40,14 +43,10 @@ const Generator = () => {
         setSpecialNumbers(values);
     }
 
-    const handleSave = () => {
-    
-    }
-
     return (
         <div className="generator">
             <LottoNumbers lotto={lotto}>
-                <Button onClick={handleSave} className="save-btn secondary-btn">
+                <Button onClick={() => addLotto(lotto)} className="save-btn secondary-btn">
                     <HiOutlineSave /> Save 
                 </Button>
             </LottoNumbers>
