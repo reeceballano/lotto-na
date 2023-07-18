@@ -9,28 +9,40 @@
 import Button from "./Button";
 import Input from "./Input";
 import { HiOutlineX } from 'react-icons/hi';
+import { AnimatePresence, motion } from "framer-motion";
+import slideUpDown from "../effects/slideUpDown";
 
 const SpecialNumbers = ({ specialNumbers, onClick, onChange, inputEl }) => {
+    const { initial, animate, exit } = slideUpDown();
+
     return (
         <div className="special-numbers">
-            {
-                specialNumbers.map((field, id) => {
-                    return (
-                        <div className="special-number" key={id}>
-                            <Input
-                                innerRef={inputEl} 
+            <AnimatePresence>
+                {
+                    specialNumbers.map((field, id) => {
+                        return (
+                            <motion.div 
+                                className="special-number" 
                                 key={id}
-                                id={id}
-                                field={field}
-                                onChange={(e) => (onChange(id, e))}
-                            />
-                            <Button className="remove-field" onClick={() => onClick(id)}>
-                                <HiOutlineX />
-                            </Button>
-                        </div>
-                    )
-                })
-            }
+                                initial={initial}
+                                animate={animate}
+                                exit={exit}
+                            >
+                                <Input
+                                    innerRef={inputEl} 
+                                    key={id}
+                                    id={id}
+                                    field={field}
+                                    onChange={(e) => (onChange(id, e))}
+                                />
+                                <Button className="remove-field" onClick={() => onClick(id)}>
+                                    <HiOutlineX />
+                                </Button>
+                            </motion.div>
+                        )
+                    })
+                }
+            </AnimatePresence>
         </div>
     )
 }

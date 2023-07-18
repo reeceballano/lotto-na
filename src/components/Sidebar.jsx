@@ -1,11 +1,14 @@
 import { motion } from "framer-motion";
+import slideUpDown from "../effects/slideUpDown";
 
 const Sidebar = ({ children }) => {
+    const { initial, animate, exit } = slideUpDown();
+
     return (
         <motion.div 
-            initial={{ y: -20, opacity: 0 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ y: -20, opacity: 0 }}
+            initial={initial}
+            animate={animate}
+            exit={exit}
             className="sidebar"
         >
             { children}
