@@ -2,10 +2,11 @@ import { useRef } from "react";
 import { motion } from "framer-motion";
 import Input from "./Input";
 import '../css/Generator.css';
-import LottoNumber from "./Number";
+import LottoNumber from "./LottoNumber";
 import useLotto from "../hooks/useLotto";
 import Button from "./Button";
 import { HiOutlineRefresh, HiOutlinePlus } from "react-icons/hi";
+import LottoNumbers from "./LottoNumbers";
 
 const Generator = () => {
     const { lotto, specialNumbers, random, setSpecialNumbers } = useLotto();
@@ -43,14 +44,7 @@ const Generator = () => {
 
     return (
         <div className="generator">
-            <div className="lotto-numbers">
-                {
-                    lotto &&
-                    lotto.map(num => {
-                        return <LottoNumber num={num} key={num} />
-                    })
-                }
-            </div>
+            <LottoNumbers lotto={lotto} />
 
             <div className={`${specialNumbers.length >= 1 ? '' : 'hidden'} special-numbers`}>
                 {
