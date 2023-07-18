@@ -26,6 +26,11 @@
         shadow-slate-200
 }
 
+.special-number {
+    @apply relative
+}
+
+
 .lotto-input {
     @apply w-full bg-stone-300 px-2 py-1 rounded text-lg font-header
 }
@@ -35,7 +40,8 @@
 */
 
 .remove-field {
-    @apply font-header text-sm tracking-widest text-red-600
+    @apply font-header text-sm tracking-widest text-white absolute top-2 
+        right-2 bg-stone-600 rounded p-1 hover:bg-red-700 active:bg-red-900 transition-colors
 }
 
 .generate-container {
@@ -46,12 +52,5 @@
 .generate-btn {
     @apply  w-full md:w-52 transition-colors delay-75 text-white tracking-widest 
         rounded px-10 py-3 text-xl font-header font-normal  flex items-center justify-evenly
-}
-
-.generate-btn {
-    @apply bg-green-600 hover:bg-green-700
-}
-
-.add-field {
-    @apply bg-blue-600 hover:bg-blue-700
+        
 }

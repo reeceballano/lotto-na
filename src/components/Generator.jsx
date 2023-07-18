@@ -58,13 +58,13 @@ const Generator = () => {
             }
 
             <div className="generate-container">
-                <Button className="generate-btn" onClick={handleClick}>
+                <Button className="generate-btn primary-btn" onClick={handleClick}>
                     <HiOutlineRefresh /> 
                     Generate
                 </Button>
                 {
                 (specialNumbers.length <= 5 ) &&
-                <Button className="add-field" onClick={addFields}>
+                <Button className="add-field secondary-btn" onClick={addFields}>
                     <HiOutlinePlus />
                     Add field
                 </Button>

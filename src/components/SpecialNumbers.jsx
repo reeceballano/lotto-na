@@ -8,6 +8,7 @@
 
 import Button from "./Button";
 import Input from "./Input";
+import { HiOutlineX } from 'react-icons/hi';
 
 const SpecialNumbers = ({ specialNumbers, onClick, onChange, inputEl }) => {
     return (
@@ -24,7 +25,7 @@ const SpecialNumbers = ({ specialNumbers, onClick, onChange, inputEl }) => {
                                 onChange={(e) => (onChange(id, e))}
                             />
                             <Button className="remove-field" onClick={() => onClick(id)}>
-                                Remove
+                                <HiOutlineX />
                             </Button>
                         </div>
                     )
