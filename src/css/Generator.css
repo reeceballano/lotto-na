@@ -44,7 +44,8 @@
 
 .add-field,
 .generate-btn {
-    @apply  w-full md:w-52 transition-colors delay-75 text-white tracking-widest rounded px-10 py-3 text-xl font-header font-normal 
+    @apply  w-full md:w-52 transition-colors delay-75 text-white tracking-widest 
+        rounded px-10 py-3 text-xl font-header font-normal  flex items-center justify-evenly
 }
 
 .generate-btn {
@@ -54,4 +55,3 @@
 .add-field {
     @apply bg-blue-600 hover:bg-blue-700
 }
-

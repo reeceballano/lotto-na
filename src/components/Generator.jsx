@@ -4,6 +4,8 @@ import Input from "./Input";
 import '../css/Generator.css';
 import LottoNumber from "./Number";
 import useLotto from "../hooks/useLotto";
+import Button from "./Button";
+import { HiOutlineRefresh, HiOutlinePlus } from "react-icons/hi";
 
 const Generator = () => {
     const { lotto, specialNumbers, random, setSpecialNumbers } = useLotto();
@@ -24,7 +26,7 @@ const Generator = () => {
 
     const handleChange = (id, event) => {
         const re = /^[0-9\b]+$/;
-        
+
         // only number is allowed
         if(event.target.value === '' || re.test(event.target.value) ) { 
             const values = [...specialNumbers];
@@ -71,12 +73,16 @@ const Generator = () => {
             </div>
 
             <div className="generate-container">
-                <button className="generate-btn" onClick={handleClick}>
+                <Button className="generate-btn" onClick={handleClick}>
+                    <HiOutlineRefresh /> 
                     Generate
-                </button>
+                </Button>
                 {
-                    (specialNumbers.length <= 5 ) &&
-                    <button className="add-field" onClick={addFields}>Add field</button>
+                (specialNumbers.length <= 5 ) &&
+                <Button className="add-field" onClick={addFields}>
+                    <HiOutlinePlus />
+                    Add field
+                </Button>
                 }
             </div>
         </div>
