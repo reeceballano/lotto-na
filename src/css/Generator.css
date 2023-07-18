@@ -11,9 +11,9 @@
 }
 
 .lotto-number {
-    @apply md:text-7xl text-xl font-header border bg-stone-200 
-        border-stone-300 p-2 md:w-20 w-10 flex items-center justify-center 
-        text-stone-600 rounded
+    @apply md:text-7xl text-xl font-header border bg-stone-50 
+        border-violet-300 p-2 md:w-20 w-10 flex items-center justify-center 
+        text-violet-600 rounded
 }
 
 /**
@@ -26,13 +26,15 @@
 }
 
 .special-number {
-    @apply relative bg-stone-100 md:my-8 my-2 md:py-10 py-5 px-3 rounded-lg shadow-lg border border-stone-200
-    shadow-slate-200
+    @apply relative bg-stone-50 md:my-8 my-2 md:py-10 py-5 px-3 rounded-lg shadow-lg 
+    border border-violet-200 shadow-slate-200 
 }
 
 
 .lotto-input {
-    @apply w-full bg-stone-300 px-2 py-1 rounded text-lg font-header
+    @apply w-full bg-white px-2 py-1 rounded text-lg font-header
+        outline-violet-500 active:outline-violet-500 focus-within:outline-violet-500
+        border border-violet-300 font-thin tracking-wide placeholder:text-violet-200 text-violet-600
 }
 
 /**

@@ -14,6 +14,7 @@ const Input = ({ innerRef, id, field, onChange}) => {
                 type="text" 
                 value={field || ''} 
                 onChange={onChange}
+                placeholder="Special number"
             />
         </div>
     )

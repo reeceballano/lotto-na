@@ -7,5 +7,5 @@
 }
 
 .sidebar-widget .history-list li small {
-    @apply text-xs bg-orange-600 p-1 overflow-hidden text-white rounded-sm font-thin tracking-widest
+    @apply text-xs bg-rose-600 p-1 overflow-hidden text-white rounded-sm font-thin tracking-widest
 }
