@@ -7,6 +7,7 @@ import useLotto from "../hooks/useLotto";
 import Button from "./Button";
 import { HiOutlineRefresh, HiOutlinePlus } from "react-icons/hi";
 import LottoNumbers from "./LottoNumbers";
+import SpecialNumbers from "./SpecialNumbers";
 
 const Generator = () => {
     const { lotto, specialNumbers, random, setSpecialNumbers } = useLotto();
@@ -46,25 +47,15 @@ const Generator = () => {
         <div className="generator">
             <LottoNumbers lotto={lotto} />
 
-            <div className={`${specialNumbers.length >= 1 ? '' : 'hidden'} special-numbers`}>
-                {
-                    specialNumbers.map((field, id) => {
-                        return (
-                            <div className="special-number" key={id}>
-                                    <Input
-                                        innerRef={inputEl} 
-                                        key={id}
-                                        id={id}
-                                        field={field}
-                                        onChange={(e) => (handleChange(id, e))}
-                                />
-
-                                <button className="remove-field" onClick={() => handleRemove(id)}>Remove</button>
-                            </div>
-                        )
-                    })
-                }
-            </div>
+            {
+                (specialNumbers.length > 0) &&
+                <SpecialNumbers 
+                    specialNumbers={specialNumbers} 
+                    onClick={handleRemove}
+                    onChange={handleChange}
+                    inputEl={inputEl}
+                />
+            }
 
             <div className="generate-container">
                 <Button className="generate-btn" onClick={handleClick}>
