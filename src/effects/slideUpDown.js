@@ -1,4 +1,13 @@
+import { easeInOut } from "framer-motion"
+
 const slideUpDown = () => {
+    const transition = {
+        delay: 0.5,
+        ease: easeInOut,
+        type: "spring", 
+        stiffness: 100
+    }
+
     const initial = {
         y: -20, 
         opacity: 0
@@ -17,7 +26,8 @@ const slideUpDown = () => {
     return {
         initial,
         animate,
-        exit
+        exit,
+        transition
     }
 }
 

@@ -36,9 +36,15 @@ const LocalStorageProvider = ({children}) => {
         } 
     }
 
+    const removeLotto = (id) => {
+        const updated = lsLotto.filter(item => item.id !== id);
+        setLSLotto(updated);
+    }
+
     const value = {
         lsLotto,
-        addLotto
+        addLotto,
+        removeLotto
     }
 
     useEffect(() => {

@@ -1,13 +1,19 @@
 import dayjs from 'dayjs';
 import { motion } from 'framer-motion';
 import slideUpDown from '../effects/slideUpDown';
+import { HiOutlineX } from 'react-icons/hi';
+import { useContext } from 'react';
+import { LocalStorageContext } from '../context/LocalStorageProvider';
+import Button from './Button';
 
 const LocalStorageItem = ({ item }) => {
-    const { initial, animate, exit } = slideUpDown();
+    const { initial, animate, exit, transition } = slideUpDown();
+    const { removeLotto } = useContext(LocalStorageContext);
 
     return (
         <motion.li
             ke={item}
+            transition={transition}
             initial={initial}
             animate={animate}
             exit={exit}    
@@ -18,6 +24,9 @@ const LocalStorageItem = ({ item }) => {
                 })
             } 
             <small>{dayjs(item.date).format('MMMM D, YYYY')}</small>
+            <Button className="remove-field" onClick={() => removeLotto(item.id)}>
+                <HiOutlineX />
+            </Button>
         </motion.li>
     )
 }
