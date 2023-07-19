@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import LocalStorageItem from "./LocalStorageItem";
 import { LocalStorageContext } from "../context/LocalStorageProvider";
+import { AnimatePresence } from "framer-motion";
 
 const LocalStorageItems = () => {
     const { lsLotto } = useContext(LocalStorageContext);
@@ -8,6 +9,7 @@ const LocalStorageItems = () => {
 
     return (
             <ul className='history-list'>
+                <AnimatePresence>
                 {
                     (sortedData?.length) ?  
                         sortedData.map(item => {
@@ -16,7 +18,7 @@ const LocalStorageItems = () => {
                         :
                         <h3>Press the "Save" button to store numbers.</h3>
                 }   
-
+                </AnimatePresence>
             </ul>
     )
 }
