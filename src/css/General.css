@@ -24,6 +24,10 @@
     @apply mr-1
 }
 
+.outlined-btn {
+    @apply border-2 border-rose-600 hover:bg-rose-700 hover:text-white active:bg-rose-900 text-rose-600
+}
+
 /**
     HEADER
 */
@@ -45,11 +49,14 @@
 }
 
 .logo-container h3 {
-    @apply text-xl font-semibold uppercase tracking-wider text-violet-700 font-header
+    @apply text-xl font-semibold font-header uppercase tracking-wider 
+        
+    /**bg-violet-900 p-5 border-2 border-violet-500 font-thin
+        text-violet-100 font-header w-14 h-14 flex items-center justify-center rounded-full*/
 }
 
 .logo-container h3 span {
-    @apply text-slate-700
+    @apply text-violet-500
 }
 
 /**

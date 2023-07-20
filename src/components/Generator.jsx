@@ -68,7 +68,7 @@ const Generator = () => {
                 </Button>
                 {
                 (specialNumbers.length <= 5 ) &&
-                <Button className="add-field secondary-btn" onClick={addFields}>
+                <Button className="add-field outlined-btn" onClick={addFields}>
                     <HiOutlinePlus />
                     Add field
                 </Button>

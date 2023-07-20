@@ -12,8 +12,8 @@
 
 .lotto-number {
     @apply md:text-7xl text-xl font-header border bg-stone-50 
-        border-violet-300 p-2 md:w-20 w-10 flex items-center justify-center 
-        text-violet-600 rounded
+        border-stone-300 p-2 md:w-20 w-10 flex items-center justify-center 
+        text-stone-600 rounded
 }
 
 /**
