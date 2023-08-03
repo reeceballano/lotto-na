@@ -15,6 +15,7 @@ const Generator = () => {
     const inputEl = useRef('');
 
     const handleClick = () => {
+        // Don't include zero value in specialNumbers
         const num = 6 - parseInt(specialNumbers.map(item => Number(item)).filter(item => item !== 0).length);
         if(specialNumbers.length) { return random(num); }
         random(6)
