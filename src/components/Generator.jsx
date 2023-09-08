@@ -8,7 +8,7 @@ import SpecialNumbers from "./SpecialNumbers";
 import { LocalStorageContext } from "../context/LocalStorageProvider";
 
 const Generator = () => {
-    const { lotto, specialNumbers, random, setSpecialNumbers } = useLotto();
+    const { lotto, specialNumbers, random, setSpecialNumbers, isSPExist } = useLotto();
     
     const { addLotto } = useContext(LocalStorageContext);
 
@@ -63,13 +63,13 @@ const Generator = () => {
             }
 
             <div className="generate-container">
-                <Button className="generate-btn primary-btn" onClick={handleClick}>
+                <Button disabled={isSPExist} className={`generate-btn primary-btn ${isSPExist ? 'btn-disabled' : ''}`} onClick={handleClick}>
                     <HiOutlineRefresh /> 
                     Generate
                 </Button>
                 {
                 (specialNumbers.length <= 5 ) &&
-                <Button className="add-field outlined-btn" onClick={addFields}>
+                <Button disabled={isSPExist} className={`add-field outlined-btn ${isSPExist ? 'btn-disabled' : ''}`} onClick={addFields}>
                     <HiOutlinePlus />
                     Add field
                 </Button>

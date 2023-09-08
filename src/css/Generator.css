@@ -56,3 +56,7 @@
         rounded px-10 py-3 text-xl font-header font-normal  flex items-center justify-evenly
         
 }
+
+.btn-disabled {
+    @apply !bg-slate-400 !cursor-not-allowed !border-0 !text-white
+}
