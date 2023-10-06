@@ -44,6 +44,12 @@ const useLotto = () => {
         return [...new Set(filteredElements)]
     }
 
+    // Handle lotto option
+    const handleLottoOption = (val) => {
+        console.log('handle lotto option',val)
+        setLottoOption(val);
+    }
+
     // RUN ON FIRST LOAD THE RANDOM FUNCTION
     useEffect(() => {
         random(6);
@@ -63,7 +69,7 @@ const useLotto = () => {
         specialNumbers,
         setSpecialNumbers,
         lottoOption,
-        setLottoOption,
+        handleLottoOption,
         isSPExist
     }
 }

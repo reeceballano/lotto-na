@@ -1,0 +1,24 @@
+.lotto-options {
+    @apply flex gap-1 relative
+}
+
+.lotto-options label {
+    @apply md:text-4xl text-xl font-header relative
+        md:w-20 w-10 flex items-center justify-center
+        text-stone-600 rounded cursor-pointer hover:text-rose-600
+    }
+    
+.lotto-options .form-group {
+    @apply md:text-4xl text-xl font-header relative text-stone-600
+        after:content-['/'] after:absolute after:-right-2 after:top-0 after:last:hidden
+
+}
+
+.lotto-options input {
+    @apply hidden
+}
+
+.option-checkbox:checked + label {
+    @apply !text-red-500
+}
+

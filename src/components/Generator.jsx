@@ -6,9 +6,10 @@ import { HiOutlineRefresh, HiOutlinePlus, HiOutlineSave } from "react-icons/hi";
 import LottoNumbers from "./LottoNumbers";
 import SpecialNumbers from "./SpecialNumbers";
 import { LocalStorageContext } from "../context/LocalStorageProvider";
+import LottoOption from "./LottoOption";
 
 const Generator = () => {
-    const { lotto, specialNumbers, random, setSpecialNumbers, isSPExist } = useLotto();
+    const { lotto, specialNumbers, random, setSpecialNumbers, isSPExist, lottoOption, handleLottoOption } = useLotto();
     
     const { addLotto } = useContext(LocalStorageContext);
 
@@ -44,13 +45,21 @@ const Generator = () => {
         setSpecialNumbers(values);
     }
 
+    // Lotto option
+    const isChecked = (val) => {
+        if(Number(lottoOption) !== Number(val)) { return false }
+        return true;
+    }
+
     return (
         <div className="generator">
             <LottoNumbers lotto={lotto}>
+                
                 <Button onClick={() => addLotto(lotto)} className="save-btn secondary-btn">
                     <HiOutlineSave /> Save 
                 </Button>
             </LottoNumbers>
+
 
             {
                 (specialNumbers.length > 0) &&
@@ -63,6 +72,8 @@ const Generator = () => {
             }
 
             <div className="generate-container">
+                <LottoOption onChange={handleLottoOption} isChecked={isChecked}/>
+                
                 <Button disabled={isSPExist} className={`generate-btn primary-btn ${isSPExist ? 'btn-disabled' : ''}`} onClick={handleClick}>
                     <HiOutlineRefresh /> 
                     Generate
