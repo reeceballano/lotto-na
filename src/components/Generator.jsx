@@ -55,7 +55,7 @@ const Generator = () => {
         <div className="generator">
             <LottoNumbers lotto={lotto}>
                 
-                <Button onClick={() => addLotto(lotto)} className="save-btn secondary-btn">
+                <Button onClick={() => addLotto({ lotto, lottoOption })} className="save-btn secondary-btn">
                     <HiOutlineSave /> Save 
                 </Button>
             </LottoNumbers>

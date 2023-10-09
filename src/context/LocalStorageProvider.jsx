@@ -22,8 +22,9 @@ const LocalStorageProvider = ({children}) => {
     const addLotto = (payload) => {
         const newData = {
             id: id(),
-            number: payload,
-            date: new Date()
+            number: payload.lotto,
+            date: new Date(),
+            option: payload.lottoOption 
         }
 
         if(lsLotto?.length >= 1 && lsLotto !== null) {
