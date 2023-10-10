@@ -12,7 +12,7 @@ const LocalStorageItem = ({ item }) => {
 
     return (
         <motion.li
-            ke={item}
+            key={item}
             transition={transition}
             initial={initial}
             animate={animate}
