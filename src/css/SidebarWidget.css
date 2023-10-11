@@ -17,3 +17,7 @@
 .history-list .remove-field {
     @apply -right-6 top-0 bg-white text-red-500 hover:bg-red-500 hover:text-white
 }
+
+.lotto-option {
+    @apply !bg-red-500
+}

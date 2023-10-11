@@ -23,7 +23,9 @@ const LocalStorageItem = ({ item }) => {
                     return <span key={item}>{item} </span>
                 })
             } 
+
             <small>{dayjs(item.date).format('MMMM D, YYYY')}</small>
+            <small className="lotto-option">{item.option}</small>
             <Button className="remove-field" onClick={() => removeLotto(item.id)}>
                 <HiOutlineX />
             </Button>
