@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="main-footer">
             <div className="container">
                 <div className="footer-contents">
-                    <small>Design and Coded by me :)</small>
+                    <small>Designed and Coded by me :)</small>
                 </div>
             </div>
         </footer>
